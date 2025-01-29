@@ -1,0 +1,22 @@
+{
+    "USERS": "Users",
+    "DETAILS": "Details",
+    "SETTINGS": "Settings",
+    "SEARCH.PLACEHOLDER": "Search by UserName",
+    "USER.NAME": "Username",
+    "USER.EMAIL": "Email",
+    "USER.PHONE": "Phone",
+    "USER.ADDRESS": "Address",
+    "DARK_MODE": "Dark Mode",
+    "LANGUAGE": "Language",
+    "RUSSIAN": "Russian",
+    "ENGLISH": "English",
+    "SIGN_IN": "Sign in",
+    "SIGN_IN.ERROR": "Please fill in both fields",
+    "COMPANY.ABOUT": "About company",
+    "COMPANY.NAME": "Company name",
+    "COMPANY.CHTCH": "Description",
+    "EMPTY": "Is Empty",
+    "EXIT": "Log out",
+    "INVALID_CREDENTIALS": "invalid credentials"
+}
