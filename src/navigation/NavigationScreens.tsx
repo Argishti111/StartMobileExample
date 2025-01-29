@@ -1,10 +1,12 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import React from 'react';
+import React, {useEffect} from 'react';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {TabNavigations} from './TabNavigations';
 import {SignInScreen} from '../screens';
-import {useAppSelector} from '../redux/hooks.ts';
+import {useAppDispatch, useAppSelector} from '../redux/hooks.ts';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {set} from '../redux/darkModeSlice.ts';
 
 export interface VerificationScreenParams {
   phoneNumber: string;
@@ -19,6 +21,15 @@ export type StackNavigatorParamList = {
 const Stack = createStackNavigator<StackNavigatorParamList>();
 
 export function NavigationScreens() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    (async () => {
+      const isDarkMode = (await AsyncStorage.getItem('isDarkMode')) === 'true';
+      dispatch(set(isDarkMode));
+    })();
+  }, []);
+
   const isAuthorized = useAppSelector(state => state.auth.isAuthorized);
   return (
     <SafeAreaProvider>
